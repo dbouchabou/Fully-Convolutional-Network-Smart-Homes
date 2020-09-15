@@ -1,0 +1,1 @@
+# Fully-Convolutional-Network-Smart-Homes-Activity-Recognition
