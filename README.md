@@ -21,7 +21,7 @@ todo
 
 ## Results
 
-The following table contains the averaged balanced accuracy and average weighted F1-score over 3 runs of each implemented models on Aruba and Milan datasets from CASAS.
+The following table contains the averaged balanced accuracy and average weighted F1-score over 3 runs of each implemented models on Aruba and Milan datasets from CASAS depends on the sliding windows size used.
 
 
 
