@@ -8,11 +8,15 @@ The data used in this project comes from Center for Advanced Studies in Adaptive
 * The [Aruba](http://casas.wsu.edu/datasets/aruba.zip)
 * The [Milan](http://casas.wsu.edu/datasets/milan.zip)
 
+* [datasets](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/datasets) contain a copy of the original datasets and an exemple allready pre-processed with a sliding windows of size 100 and 25.
+
 ## Code
 
 The code is divided as follows: 
-* The [main.py](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/master/main.py) python file contains the necessary code to run an experiement.
-* The [models](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/master/models) folder contains deep neural network models tested in our paper.
+* The [main.py](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/main.py) python file contains the necessary code to run an experiement.
+* The [models](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/models) folder contains deep neural network models tested in our paper.
+* The [pre_proccessing](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/pre_processing) folder contains scripts to preprocess datasets.
+
 
 To run a model on one dataset you should issue the following command: 
 ```
@@ -43,4 +47,13 @@ The following table contains the averaged balanced accuracy and average weighted
 If you re-use this work, please cite:
 
 ```
+@article{dbouchabou2020fcnsmarhomehar,
+  Title                    = {Fully Convolutional Network Bootstrapped by Word Encoding and Embedding for Activity Recognition in Smart Homes},
+  Author                   = {Damien, Sao Mai, Christophe, Benoit, Ioannis},
+  journal                  = {},
+  Year                     = {2020},
+  volume                   = {},
+  number                   = {},
+  pages                    = {},
+}
 ```
