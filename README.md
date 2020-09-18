@@ -1,6 +1,6 @@
 # Fully Convolutional Network Bootstrapped by Word Encoding and Embedding for Activity Recognition in Smart Homes
 
-![framework architecture](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/master/png/fcn_framework.png)
+![Framework Architecture](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/png/fcn_framework.png)
 
 ## Data 
 The data used in this project comes from Center for Advanced Studies in Adaptive Systems CASAS : 
