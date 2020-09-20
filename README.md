@@ -20,7 +20,7 @@ The code is divided as follows:
 
 To run a model on one dataset you should issue the following command: 
 ```
-todo 
+python main.py --i MILAN_activity_sequences_windowed_25_padded --d datasets/pre_processed_datasets/MILAN --c batch_1024_epoch_400_early_stop_mask_0.0 --m FCN_Embedded FCN 
 ``` 
 
 ## Results
