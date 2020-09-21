@@ -10,18 +10,33 @@ The data used in this project comes from Center for Advanced Studies in Adaptive
 
 * [datasets](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/datasets) contain a copy of the original datasets and an exemple allready pre-processed with a sliding windows of size 100 and 25.
 
+## Quick Start
+
+
+## Pre-processing
+
+```
+python  
+```
+
 ## Code
 
 The code is divided as follows: 
 * The [main.py](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/main.py) python file contains the necessary code to run an experiement.
-* The [models](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/models) folder contains deep neural network models tested in our paper.
+* The [classifiers](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/classifiers) folder contains deep neural network models tested in our paper.
 * The [pre_proccessing](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/pre_processing) folder contains scripts to preprocess datasets.
 
 
-To run a model on one dataset you should issue the following command: 
+To run models on one dataset you should issue the following command: 
 ```
 python main.py --i MILAN_activity_sequences_windowed_25_padded --d datasets/pre_processed_datasets/MILAN --c batch_1024_epoch_400_early_stop_mask_0.0 --m FCN_Embedded FCN 
 ``` 
+Options
+* --i input file dataset
+* --d path to the dataset
+* --c comments ex: choosen hyperparameters, batch size, ...
+* --m models one ore more
+
 
 ## Results
 

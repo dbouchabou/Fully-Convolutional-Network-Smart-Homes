@@ -37,8 +37,10 @@ from sklearn.metrics import balanced_accuracy_score
 from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.model_selection import ShuffleSplit
 
-
-from classifiers import classifiers
+from classifiers import FCN
+from classifiers import FCNEmbedded
+from classifiers import LSTM
+from classifiers import LSTMEmbedded
 
 seed = 7
 epoch = 400
@@ -286,7 +288,7 @@ if __name__ == '__main__':
                 x_test = X_TEST.reshape(X_TEST.shape[0],X_TEST.shape[1],1)
 
                 with strategy.scope():
-                    model = classifiers.modelFCN(x_train,y_train)
+                    model = FCN.model(x_train,y_train)
 
             
             ###########_FCN_WITH_EMBEDDING_##########
@@ -302,7 +304,7 @@ if __name__ == '__main__':
                 x_test = X_TEST
 
                 with strategy.scope():
-                    model = classifiers.modelFCNEmbedded(x_train,y_train,vocabSize)
+                    model = FCNEmbedded.modelFCNEmbedded(x_train,y_train,vocabSize)
 
 
             ###########_LSTM_##########
@@ -318,7 +320,7 @@ if __name__ == '__main__':
                 x_test = X_TEST.reshape(X_TEST.shape[0],X_TEST.shape[1],1)
 
                 with strategy.scope():
-                    model = classifiers.modelLSTM(x_train,y_train)
+                    model = LSTM.model(x_train,y_train)
 
 
             ###########_LSTM_WITH_EMBEDDING_##########
@@ -334,7 +336,7 @@ if __name__ == '__main__':
                 x_test = X_TEST
 
                 with strategy.scope():
-                    model = classifiers.modelLSTMEmbedded(x_train,y_train,vocabSize)
+                    model = LSTMEmbedded.model(x_train,y_train,vocabSize)
 
             
 
