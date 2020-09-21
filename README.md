@@ -2,6 +2,13 @@
 
 ![Framework Architecture](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/png/fcn_framework.png)
 
+## Code
+
+The code is divided as follows: 
+* The [main.py](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/main.py) python file contains the necessary code to run an experiement.
+* The [classifiers](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/classifiers) folder contains deep neural network models tested in our paper.
+* The [pre_proccessing](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/pre_processing) folder contains scripts to preprocess datasets.
+
 ## Data 
 The data used in this project comes from Center for Advanced Studies in Adaptive Systems CASAS : 
 
@@ -10,22 +17,44 @@ The data used in this project comes from Center for Advanced Studies in Adaptive
 
 * [datasets](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/datasets) contain a copy of the original datasets and an exemple allready pre-processed with a sliding windows of size 100 and 25.
 
-## Quick Start
+## Setup
 
+To quickly run a training, extract the pre-processed datasets in datasets folder and see the section "Train" below
 
 ## Pre-processing
 
+First step is to read raw dataset pre-process it with [pre_process.py](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/pre_processing/pre_process.py).
+
+* STEP 1: Load dataset
+* STEP 2: prepare dataset
+* STEP 3: segment dataset in sequence of activity
+* STEP 4: transform sequences of activity in sentences
+* STEP 5: sentences indexization
+* STEP 6: split indexed sentences in sliding windows
+* STEP 7: pad sliding windows
+* STEP 8: save sliding windows and labels
+
+
 ```
-python  
+python pre_process.py --i ../datasets/original_datasets/milan/data --o MILAN_activity_sequences_windowed --w 25  
 ```
 
-## Code
+Options
+* --i input file dataset
+* --o output file
+* --w windows size
 
-The code is divided as follows: 
-* The [main.py](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/main.py) python file contains the necessary code to run an experiement.
-* The [classifiers](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/classifiers) folder contains deep neural network models tested in our paper.
-* The [pre_proccessing](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/pre_processing) folder contains scripts to preprocess datasets.
+In order to train models on equal bases, uses [subsets_generator.py](https://github.com/dbouchabou/Fully-Convolutional-Network-Smart-Homes/blob/master/pre_processing/subsets_generator.py). This script generate train, validation and test subsets.
 
+```
+python subsets_generator.py --i MILAN_activity_sequences_windowed_25_padded --p ../datasets/MILAN    
+```
+
+Options
+* --i input file dataset
+* --p path where subsets will be save
+
+## Train
 
 To run models on one dataset you should issue the following command: 
 ```
@@ -41,7 +70,6 @@ Options
 ## Results
 
 The following table contains the averaged balanced accuracy and average weighted F1-score over 3 runs of each implemented models on Aruba and Milan datasets from CASAS depends on the sliding windows size used.
-
 
 
 |                             |                 |           |ARUBA     |          |          |   |           |MILAN     |          |          |

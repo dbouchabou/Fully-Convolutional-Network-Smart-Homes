@@ -44,7 +44,7 @@ def load_data(input_file):
     Y = np.load(name_y,allow_pickle=True)
 
     # tokenize Y
-    #Y1 = Y
+    Y1 = Y
     for i,y in enumerate(Y):
         Y1[i]=dictActivities[y]
 
@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
     X, Y, dictActivitie, listActivities = load_data(input_file)
 
-
+    print("TOTAL")
     print(X.shape)
     print(Y.shape)
 
@@ -86,12 +86,9 @@ if __name__ == '__main__':
     np.save("{}/{}_X_TEST".format(path,input_file), data_X_test)
     np.save("{}/{}_Y_TEST".format(path,input_file), data_Y_test)
 
-    print("TEST")
-    print(data_X_train.shape)
-    print(data_Y_train.shape)
-
-    print(data_X_test.shape)
-    print(data_Y_test.shape)  
+    print("\nTEST")
+    print("X_TEST : {}".format(data_X_test.shape))
+    print("Y_TEST : {}".format(data_Y_test.shape))
 
 
     # Cross Validation
@@ -107,14 +104,14 @@ if __name__ == '__main__':
         np.save("{}/{}_X_VALIDATION_{}".format(path,input_file,k), data_X_train[k_validation_index])
         np.save("{}/{}_Y_VALIDATION_{}".format(path,input_file,k), data_Y_train[k_validation_index])
 
-        print(k)
+        print("\nTrain / Validation subset n°{}".format(k+1))
 
         print("TRAIN")
-        print(data_X_train[k_train_index].shape)
-        print(data_Y_train[k_train_index].shape)
+        print("X_TRAIN_{} : {}".format(k+1,data_X_train[k_train_index].shape))
+        print("Y_TRAIN_{} : {}".format(k+1,data_Y_train[k_train_index].shape))
 
         print("VALIDATION")
-        print(data_X_train[k_validation_index].shape)
-        print(data_Y_train[k_validation_index].shape)
+        print("X_VALIDATION_{} : {}".format(k+1,data_X_train[k_validation_index].shape))
+        print("X_VALIDATION_{} : {}".format(k+1,data_Y_train[k_validation_index].shape))
         
         k += 1
